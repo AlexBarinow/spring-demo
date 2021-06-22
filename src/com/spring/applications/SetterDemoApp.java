@@ -1,4 +1,4 @@
-package com.spring;
+package com.spring.applications;
 
 import com.spring.interfaces.Coach;
 import com.spring.realisationclasses.TrackCoach;
