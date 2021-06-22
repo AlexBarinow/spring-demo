@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id = "myFortune"
+          class="com.spring.realisationclasses.HappyFortuneService">
+    </bean>
+
+
+    <bean id = "myTrackCoach"
+          class="com.spring.realisationclasses.TrackCoach">
+        <constructor-arg ref="myFortune"/>
+    </bean>
+
+    <bean id = "myCricketCoach"
+                  class="com.spring.realisationclasses.CricketCoach">
+        <!-- property - setter injection -->
+        <property name="fortuneService" ref="myFortune"/>
+
+        <!-- injecction of literal values -->
+        <property name="emailAddress" value="username.alex64@gmail.com"/>
+        <property name="team" value="ApfelEaters"/>
+    </bean>
+
+    <bean id = "myBaseballCoach"
+          class="com.spring.realisationclasses.BaseballCoach">
+
+        <constructor-arg ref="myFortune"/>
+    </bean>
+
+
+
+</beans>
